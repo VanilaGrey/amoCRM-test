@@ -12,14 +12,23 @@
 		{% endfor %}
 	</head>
 	<body>
-		{# For svelte #}{# <div class="page">{{ app.page }}</div> #}
+		<input placeholder="Seconds" type="text" maxlength="8" pattern="\d{2}:\d{2}:\d{2}"/>
 
-		{# For vue #}{# {{ app.page }} #}
+		<button type="button">Start</button>
 
-		<script>
-			window.appData = {{ appData|json_encode() }};
-		</script>
-		<script src="{{ rootPath }}scripts/main.js{{ version }}"></script>
+		<br/>
+		<br/>
+
+		<span>hh:mm:ss</span>
+		{# For svelte #}
+		{# <div class="page">{{ app.page }}</div> #}
+
+		{# For vue #}
+		{# {{ app.page }} #}
+
+			<script>
+window.appData = {{ appData|json_encode() }};
+		</script><script src="{{ rootPath }}scripts/main.js{{ version }}"> </script>
 
 		{% if isDev %}
 			<script>
